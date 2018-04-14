@@ -1,0 +1,15 @@
+#!/usr/bin/gnuplot -persist
+reset
+set print "-"
+
+set term png truecolor
+set ylabel "Wavefunction"
+set grid
+set style fill transparent solid 0.5 noborder
+
+set output "wavefunction.png"
+set xlabel "x"
+plot "wavefunction.txt" using 1:2 with lines 
+print "Created wavefunction.png" 
+
+

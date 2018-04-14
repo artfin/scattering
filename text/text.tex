@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% page margin
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\usepackage{graphicx}
+
+% AMS packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+% blackboar lettering
+\usepackage{dsfont}
+\usepackage{bbm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% modifying page layout using fancyhdr
+\fancyhf{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+
+\begin{document}
+[2 slide] A schematic representation of a standard scattering experiment appears in fig. 1.1. At the left appears the source of incident particles. The second particle is provided by the the stationary target, but it is not essential to be stationary. Detector simply counts the number of particles of a particular type that arrive at its position. Also there is a collimator that shields the detector from the source.
+
+[3 slide] We analyse the scattering process of a particle incident on a scattering centre which is usually another particle. We assume that we know the scattering potential which spherically symmetric so that it depends on the distance between the particle and the scattering centre only. 
+In an experiment, one typically measures the scattered ful, that is the intensity of the outgoing beam for vaious directions which are denoted by the spatial angle $\Omega = (\theta, \phi)$. The differential cross section, $d\sigma / d\Omega (\Omega)$, describes how these intensities are distributed over various spatial angels $\Omega$ and the integrated flux of the scattered particles is the total cross section, $\sigma_{tot}$. These experimental quantities are what we want to calculate.
+ 
+
+[4-5 slide] Let us start the description with the Hamiltonian. The Hamiltonian for a system of two interacting particles maybe written the following way. An important simplification results if we separate out the motion of the center of mass. We define the relative coordinate $\mathbf{r}$ by ... and the coordinate of the center of mass by ... . It permits a separation of the variable $\mathbf{R}$ and $\mathbf{r}$, so that we obtain the two separated equations.    
+
+[6 slide] In principle, the task is to solve time-dependent Schrodinger equation. However, if beam is "switched on" for times long as compared with "encounter-time" , steady-state conditions apply. It can be visualized with the following picture: The incoming plane wave represents a steady beam of particles. The beam is scattered and at each angle a time-independent scattered beam intensity is observed.
+From this pictures it is easy to obtain the asymptotic behaviour of the wave function $\psi_k(r)$. Asymptotically $\psi_k$ must consist of an incoming plane wave and an outgoing spherical wave centered about the origin of the scattering field.  The amplitude of the scattered wave must depend on two angles $\theta$ and $\phi$ of a polar coordinate system.  The incident plane wave $\psi_0$ yields a steady particle flux density whereas the scattered wave yields a flux density depending on the direction.
+Following the definition of the differential cross section we obtain that the latter is determined by the scattering amplitude $f(\theta, \phi)$.
+
+[7 slide] For central scattering field, the scattering amplitude becomes independent of the azimuthal angle $\phi$ due to cylindrical symmetry. The solution of time-independent Schroedinger equation is expanded in terms of spherical harmonics (reducing to Legendre polynomial). The radial wave wavefunctions $u_l$ obey the Radial Schroedinger equation. Outside the potential well, the solution is represented by linear combination of spherical Bessel and Neumann functions, but they are reduced to asymptotic form of just phased sine. 
+
+[8 slide] The phase shifts $\delta_l$ describe the influence of the potential. Summarising the analysis up to this point, we see that the potential determines the phase shift through the solution of the Schroedinger equation up to some $r_{max}$. The phase shift acts as an intermediate object between the interaction potential and the experimental scattering cross sections, as the latter can determined from it. The coefficients in expansion of wavefunction (into Legendre polynomials) are determined in such a way, that the asymptotic behaviour is obtained (spherical wave). This leads to expression for scattering amplitude. The $S_l$ in the following formulae are the elements of the S matrix (we were introduced to it on lectures). Making use of the orthogonality property of the Legendre polynomials, we obtain for the total scattering cross section.    
+
+[9 slide] Here are listed several steps necessary for calculating cross sections. In this section we describe the construction of a program for calculating cross sections for a particular scattering problem: hydrogen atoms scattered off krypton atoms. \\
+First, the integration method for solving the radial Schroedinger equation is programmed. Various numerical methods can be used - we consider in particular Numerov's mthod. Second, we need routines yielding spherical Bessel functions in order to determine the phase shift. Finally, we complete the program with a routine for calculating the cross sections from the phase shifts.
+
+[10 slide] We define auxiliary function $F(l, r, E)$ so that the radial Schrodinger equation reads now. We use Numerov's method to solve it with an error of order $h^6$ ($h$ is the discretisation interval). Numerov's method combines the simplicity of a regular mesh with good efficiency. Unlike most methods Numerov's method needs value of function into sequential points. Numerov's algorithm suggests following.  
+
+[11 slide] A couple of words about the interaction potential It was taken from the same article from which I took experimental results [Toennis1979] (reference is several slides from here). This potential is used to allow us to make simple guess for two starting points. For the LJ potential the integration of the radial Schrodinger equation gives problems for small $r$ because of the $r^{-12}$ divergence at the origin. We avoid integrating in this region and start at a nonzero radius $r_{min}$ where we use the analytic approximation of the solution for small $r$ to find the starting values of the numerical solution.
+
+[12 slide] For $r < r_{min}$ the repulsive term $r^{-12}$ dominates the other terms in the potential, so that Schrodinger equation reduces to . The approximate solution of this equation is given by . $r_{min}$ should be chosen such that it can assumed that the repulsive $r^{-12}$ dominates the remaining terms in the potential. The value of the wave function is needed for two values of the radial coordinate $r$, both beyond $r_{max}$. We can take $r_1$ equal take $r_{max}$, $r_2$ larger than $r_1$ (it is advised to take it rougly half a de-Broigle wavelength beyond the latter). 
+
+[13 slide] Resonance scattering. The bound states no longer exist as stationary but decay in time, due to tunneling through the barrier.
+Peaks correspond to quasi-bound, resonating states. The corresponding theory was developed mainly by Wigner, it is possible to calculate mean lifetime of quasibound state based on the width of peak. The sharp peaks correspond to long-living complexes, the wider it becomes the less stable corresponding state is.
+
+[14 slide] The radial wavefunction is showed that proofs that wavefunction is in fact localized in potential well at resonance energy.
+
+\end{document}

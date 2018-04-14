@@ -1,0 +1,112 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{rodberg}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {L.~S.~Rodberg}{L.~S.~R.}%
+     {R.~M.~Thaler}{R.~M.~T.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Academic Pr}%
+  }
+  \strng{namehash}{LSRRMT1}
+  \strng{fullhash}{LSRRMT1}
+  \field{sortinit}{L}
+  \field{title}{Introduction to the Quantum Theory of Scattering}
+  \field{year}{1967}
+\endentry
+
+\entry{thijssen}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Thijssen}{T.}%
+     {J.~M.}{J.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge University Press}%
+  }
+  \strng{namehash}{TJM1}
+  \strng{fullhash}{TJM1}
+  \field{sortinit}{T}
+  \field{title}{Computational Physics}
+  \field{year}{1999}
+\endentry
+
+\entry{toennies1979}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Toennies}{T.}%
+     {J~Peter}{J.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Welz}{W.}%
+     {Wolfgang}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wolf}{W.}%
+     {G{\"u}nther}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {AIP}%
+  }
+  \strng{namehash}{TJPWWWG1}
+  \strng{fullhash}{TJPWWWG1}
+  \field{sortinit}{T}
+  \field{number}{2}
+  \field{pages}{614\bibrangedash 642}
+  \field{title}{Molecular beam scattering studies of orbiting resonances and
+  the determination of van der Waals potentials for H--Ne, Ar, Kr, and Xe and
+  for H2--Ar, Kr, and Xe}
+  \field{volume}{71}
+  \field{journaltitle}{The Journal of Chemical Physics}
+  \field{year}{1979}
+\endentry
+
+\entry{LL}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Ландау~Л.Д.}{�.~�.}%
+     {Лифшиц~Е.М.}{�.~�.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ФМЛ}%
+  }
+  \strng{namehash}{����1}
+  \strng{fullhash}{����1}
+  \field{sortinit}{�}
+  \field{title}{Теоретическая физика. В 10 томах.
+  Том 03. Квантовая механика:
+  нерелятивистская теория}
+  \field{year}{2002}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

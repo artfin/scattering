@@ -1,0 +1,15 @@
+#!/usr/bin/gnuplot -persist
+reset
+set print "-"
+
+set term png truecolor
+set ylabel "Total cross section"
+set grid
+set style fill transparent solid 0.5 noborder
+
+set output "cross.png"
+set xlabel "E, meV"
+plot "total_crossection.txt" using 1:2 with lines 
+print "Created cross.png" 
+
+
